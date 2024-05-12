@@ -1,0 +1,54 @@
+[
+  {
+    "Date": 1715550556,
+    "Suites": [
+      {
+        "Goos": "linux",
+        "Goarch": "amd64",
+        "Pkg": "bench",
+        "Benchmarks": [
+          {
+            "Name": "BenchmarkClientReceive/golang-ipc-2",
+            "Runs": 87932,
+            "NsPerOp": 31437,
+            "Mem": {
+              "BytesPerOp": 4477,
+              "AllocsPerOp": 14,
+              "MBPerSec": 0
+            }
+          },
+          {
+            "Name": "BenchmarkClientReceive/golang-ipc-unencrypted-2",
+            "Runs": 86409,
+            "NsPerOp": 26344,
+            "Mem": {
+              "BytesPerOp": 4368,
+              "AllocsPerOp": 11,
+              "MBPerSec": 0
+            }
+          },
+          {
+            "Name": "BenchmarkServerReceive/golang-ipc-2",
+            "Runs": 33493,
+            "NsPerOp": 31304,
+            "Mem": {
+              "BytesPerOp": 4478,
+              "AllocsPerOp": 14,
+              "MBPerSec": 0
+            }
+          },
+          {
+            "Name": "BenchmarkServerReceive/golang-ipc-unencrypted-2",
+            "Runs": 41432,
+            "NsPerOp": 29585,
+            "Mem": {
+              "BytesPerOp": 4368,
+              "AllocsPerOp": 11,
+              "MBPerSec": 0
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
