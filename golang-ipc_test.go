@@ -3,7 +3,6 @@ package bench
 import (
 	"fmt"
 	ipc "github.com/joe-at-startupmedia/golang-ipc"
-	"log"
 )
 
 type golangipcBench struct {
@@ -36,16 +35,16 @@ func (b *golangipcBench) name() string {
 func (b *golangipcBench) writeServer(bytes []byte) {
 	err := b.server.Write(2, bytes)
 	if err != nil {
-		log.Printf("writeServer err: %s", err)
+		//log.Printf("writeServer err: %s", err)
 	}
 }
 
 func (b *golangipcBench) readServer() []byte {
 	msg, err := b.server.Read()
 	if err != nil {
-		log.Printf("readServer err: %s", err)
+		//log.Printf("readServer err: %s", err)
 	} else if msg.MsgType != 2 {
-		log.Printf("readServer using recursion for msg %d: %s", msg.MsgType, msg.Status)
+		//log.Printf("readServer using recursion for msg %d: %s", msg.MsgType, msg.Status)
 		return b.readServer()
 	}
 	return msg.Data
@@ -54,16 +53,16 @@ func (b *golangipcBench) readServer() []byte {
 func (b *golangipcBench) writeClient(bytes []byte) {
 	err := b.client.Write(2, bytes)
 	if err != nil {
-		log.Printf("writeClient err: %s", err)
+		//log.Printf("writeClient err: %s", err)
 	}
 }
 
 func (b *golangipcBench) readClient() []byte {
 	msg, err := b.client.Read()
 	if err != nil {
-		log.Printf("readClient err: %s", err)
+		//log.Printf("readClient err: %s", err)
 	} else if msg.MsgType != 2 {
-		log.Printf("readClient using recursion for msg %d: %s", msg.MsgType, msg.Status)
+		//log.Printf("readClient using recursion for msg %d: %s", msg.MsgType, msg.Status)
 		return b.readClient()
 	}
 	return msg.Data

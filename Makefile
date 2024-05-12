@@ -12,6 +12,14 @@ build:
 test: 
 	IPC_WAIT=0 $(GO) test -bench=. -benchmem
 
+.PHONY: benchdata
+benchdata:
+	IPC_WAIT=0 $(GO) test -bench . -benchmem ./... | gobenchdata --json bench.json
+
+.PHONY: tools
+tools:
+	$(GO) install go.bobheadxi.dev/gobenchdata@latest
+
 .PHONY: fmt
 fmt:
 	$(GOFMT) -w $(GOFILES)
